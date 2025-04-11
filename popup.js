@@ -19,10 +19,10 @@ function reloadActiveTab() {
 
 // Optional random quotes
 const quotes = [
-  "Discipline is doing what needs to be done, even if you don’t want to.",
+  "Discipline is doing what needs to be done, even if you dont want to.",
   "Stay focused. Stay sharp. The grind is the glory.",
-  "You don’t need more time, you just need more focus.",
-  "One task at a time. That’s how you win.",
+  "You dont need more time, you just need more focus.",
+  "One task at a time. Thats how you win.",
   "Focus like a laser, not like a flashlight.",
   "No distractions, only progress."
 ];
