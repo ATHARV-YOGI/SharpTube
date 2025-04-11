@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "SharpTube",
+  "version": "1.0",
+  "description": "🧠 A sharper, cleaner, more focused YouTube experience. No noise, no fluff. Just what matters. ✂️ SharpTube — Cut the Distractions. Stay Laser-Focused. SharpTube helps you take back control of your attention by cleaning up your YouTube interface. Hide distractions like recommended videos, comments, shorts, homepage clutter, and more — so you can stay focused on what really matters.",
+  "permissions": ["scripting", "tabs", "activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+  "16": "icon.png",
+  "48": "icon.png",
+  "128": "icon.png"
+},
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
