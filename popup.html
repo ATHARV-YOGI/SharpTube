@@ -18,48 +18,54 @@
       color: #ff4c4c;
     }
 
-    label {
+    .segmented {
       display: flex;
-      align-items: center;
       gap: 10px;
-      margin-bottom: 15px;
-      background-color: #2c2c2c;
-      padding: 10px;
-      border-radius: 8px;
+      justify-content: center;
     }
 
-    input[type="checkbox"] {
-      transform: scale(1.2);
-    }
-
-    button {
-      background-color: #ff4c4c;
-      border: none;
-      color: white;
+    .segmented button {
+      flex: 1;
       padding: 10px;
-      text-align: center;
       font-size: 14px;
-      margin-top: 10px;
-      width: 100%;
-      border-radius: 8px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2c2c2c;
+      color: white;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s;
     }
 
-    button:hover {
+    .segmented button.selected {
+      background-color: #ff4c4c;
+      font-weight: bold;
+    }
+
+    .segmented button:hover {
       background-color: #ff1f1f;
+    }
+
+    blockquote {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #ccc;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <h4>SharpTube</h4>
-  <label>
-    <input type="checkbox" id="toggle-extension" />
-    Enable Focus Mode
-  </label>
+
+  <div class="segmented">
+    <button id="focus-on">Focus Mode</button>
+    <button id="focus-off">Normal Mode</button>
+  </div>  
+
   <blockquote id="quote" style="margin-top: 15px; font-size: 0.9rem; font-style: italic; color: #555;">
     "Stay focused. Stay sharp. The grind is the glory."
   </blockquote>
+
   <script src="popup.js"></script>
 </body>
 </html>
