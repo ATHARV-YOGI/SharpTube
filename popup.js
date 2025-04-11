@@ -1,8 +1,7 @@
-// Enable/Disable Extension toggle
 const toggleCheckbox = document.getElementById("toggle-extension");
 
 chrome.storage.sync.get(["enabled"], (data) => {
-  toggleCheckbox.checked = data.enabled !== false; // default to true
+  toggleCheckbox.checked = data.enabled !== false;
 });
 
 toggleCheckbox.addEventListener("change", () => {
@@ -11,23 +10,25 @@ toggleCheckbox.addEventListener("change", () => {
   });
 });
 
-// Toggle Playlist button
-document.getElementById("toggle-playlist").addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    func: () => {
-      const playlist = document.querySelector("ytd-playlist-panel-renderer");
-      if (playlist) {
-        playlist.style.display = playlist.style.display === "none" ? "" : "none";
-      }
-    }
-  });
-});
-
-// Reload tab to re-run content script on change
+// Reload tab to re-run content script
 function reloadActiveTab() {
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     chrome.tabs.reload(tab.id);
   });
+}
+
+// Optional random quotes
+const quotes = [
+  "Discipline is doing what needs to be done, even if you don’t want to.",
+  "Stay focused. Stay sharp. The grind is the glory.",
+  "You don’t need more time, you just need more focus.",
+  "One task at a time. That’s how you win.",
+  "Focus like a laser, not like a flashlight.",
+  "No distractions, only progress."
+];
+
+const quoteEl = document.getElementById("quote");
+if (quoteEl) {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteEl.textContent = `"${quotes[randomIndex]}"`;
 }
