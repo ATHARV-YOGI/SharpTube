@@ -34,12 +34,7 @@ focusOffBtn.addEventListener("click", () => {
   });
 });
 
-// Reload the current tab
-function reloadActiveTab() {
-  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
-    chrome.tabs.reload(tab.id);
-  });
-}
+
 
 // Random quote logic
 const quotes = [
@@ -48,7 +43,8 @@ const quotes = [
   "You don't need more time, you just need more focus.",
   "One task at a time. That's how you win.",
   "Focus like a laser, not like a flashlight.",
-  "No distractions, only progress."
+  "No distractions, only progress.",
+  "Distraction has cost. Focus has value."
 ];
 
 const quoteEl = document.getElementById("quote");
