@@ -3,7 +3,7 @@
   "name": "SharpTube",
   "version": "1.0",
   "description": "✂️ SharpTube — Cut the Distractions by hiding recommended videos, comments, shorts, homepage clutter, and more.",
-  "permissions": ["activeTab", "storage"],
+  "permissions": [ "storage"],
   "action": {
     "default_popup": "popup.html"
   },
